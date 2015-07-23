@@ -1,0 +1,81 @@
+% TEXT FROM:
+%http://www.newadvent.org/bible/1ma001.htm
+
+\documentclass[12pt]{book} % use larger type; default would be 10pt
+
+\usepackage[latin1]{luainputenc}
+
+\usepackage[oldstyle]{libertine}
+\usepackage{lettrine}
+\usepackage{xcolor}
+
+% dual language parallel text thing
+\usepackage{eledmac}
+\usepackage{eledpar}
+
+% BLUES
+\definecolor{benblue1}{HTML}{2B22C7}
+
+% REDS
+\definecolor{benred8}{HTML}{E82C00} %seems good, maybe the best?
+
+% THREE COMMANDS TO CLEAN UP ALL THE ELEDPAR/ELEDMAC STUFF
+\newcommand{\StartOfLatin}{
+	\begin{pairs}
+	\begin{Leftside}
+	\firstlinenum{10000}\linenumincrement{10000}\beginnumbering\pstart
+}
+
+\newcommand{\StartOfEnglish}{
+	\pend\endnumbering
+	\end{Leftside}
+	\begin{Rightside}
+
+	\firstlinenum{10000}\linenumincrement{10000}\beginnumbering\pstart
+}
+
+\newcommand{\EndOfEnglish}{
+	\pend\endnumbering
+	\end{Rightside}
+	\end{pairs}
+	\Columns
+}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+
+\begin{document}
+% VULGATE BEGINS HERE
+\chapter*{1 Maccabees}
+
+\StartOfLatin
+
+%\section{}
+
+1 Et factum est, postquam percussit Alexander Philippi Macedo, qui primus regnavit in Gr�cia, egressus de terra Cethim, Darium regem Persarum et Medorum: 2 constituit pr�lia multa, et obtinuit omnium munitiones, et interfecit reges terr�, 3 et pertransiit usque ad fines terr�: et accepit spolia multitudinis gentium, et siluit terra in conspectu ejus. 4 Et congregavit virtutem, et exercitum fortem nimis: et exaltatum est, et elevatum cor ejus: 5 et obtinuit regiones gentium, et tyrannos: et facti sunt illi in tributum. 6 Et post h�c decidit in lectum, et cognovit quia moreretur. 7 Et vocavit pueros suos nobiles, qui secum erant nutriti a juventute: et divisit illis regnum suum, cum adhuc viveret. 8 Et regnavit Alexander annis duodecim, et mortuus est.
+
+\pend\pstart
+
+9 Et obtinuerunt pueri ejus regnum, unusquisque in loco suo: 10 et imposuerunt omnes sibi diademata post mortem ejus, et filii eorum post eos annis multis, et multiplicata sunt mala in terra. 11 Et exiit ex eis radix peccatrix, Antiochus illustris, filius Antiochi regis, qui fuerat Rom� obses: et regnavit in anno centesimo trigesimo septimo regni Gr�corum. 12 In diebus illis, exierunt ex Isra�l filii iniqui, et suaserunt multis, dicentes: Eamus, et disponamus testamentum cum gentibus, qu� circa nos sunt: quia ex quo recessimus ab eis, invenerunt nos multa mala. 13 Et bonus visus est sermo in oculis eorum. 14 Et destinaverunt aliqui de populo, et abierunt ad regem: et dedit illis potestatem ut facerent justitiam gentium. 15 Et �dificaverunt gymnasium in Jerosolymis secundum leges nationum: 16 et fecerunt sibi pr�putia, et recesserunt a testamento sancto, et juncti sunt nationibus, et venundati sunt ut facerent malum.
+
+% KNOX ENGLISH TRANSLATION BEGINS HERE
+\StartOfEnglish
+
+%\section{}
+
+1 Now turn we to Alexander son of Philip, the Macedonian, that was the first to reign over all Greece. This Alexander marched out from his own land of Cethim, and overcame Darius, king of the Medes and Persians. 2 Battles he waged a many; nor any fortress might hold out against him, nor any king escape with his life; 3 and so he journeyed on to the world?s end, spoiling the nations everywhere; at his coming, silence fell on the earth. 4 So great the power of him, so valiant his armies, what wonder if his heart grew proud? 5 All those lands conquered, all those kings his tributaries! 6 Then, all at once, he took to his bed, and the knowledge came to him he must die. 7 Whereupon he summoned the noblest of his courtiers, men that had shared his own upbringing, and to these, while he had life in him yet, divided up his kingdom. 8 So reigned Alexander for twelve years, and so died.
+
+\pend\pstart
+
+9 And what of these courtiers turned princes, each with a province of his own? 10 Be sure they put on royal crowns, they and their sons after them, and so the world went from bad to worse. 11 Burgeoned then from the stock of Antiochus a poisoned growth, another Antiochus, he that was called the Illustrious. He had been formerly a hostage at Rome, but now, in the hundred and thirty-seventh year of the Grecian empire, he came into his kingdom. 12 In his day there were godless talkers abroad in Israel, that did not want for a hearing; Come, said they, let us make terms with the heathen that dwell about us! Ever since we forswore their company, nought but trouble has come our way. 13 What would you? Such talk gained credit, 14 and some were at pains to ask for the royal warrant; whereupon leave was given them, Gentile usages they should follow if they would. 15 With that, they must have a game-place at Jerusalem, after the Gentile fashion, 16 ay, and go uncircumcised; forgotten, their loyalty to the holy covenant, they must throw in their lot with the heathen, and become the slaves of impiety.	
+
+\EndOfEnglish
+
+\end{document}
+
+
+
+
+
+

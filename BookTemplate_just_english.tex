@@ -1,0 +1,68 @@
+﻿%TEXT FROM:
+%http://www.newadvent.org/bible/1ma001.htm
+
+\documentclass[10pt]{book} % use larger type; default would be 10pt
+
+\usepackage[latin1]{luainputenc}
+
+\usepackage[oldstyle]{libertine}
+\usepackage{lettrine}
+\usepackage{xcolor}
+
+% dual language parallel text thing
+\usepackage{eledmac}
+\usepackage{eledpar}
+
+% BLUES
+\definecolor{benblue1}{HTML}{2B22C7}
+
+% REDS
+\definecolor{benred8}{HTML}{E82C00} %seems good, maybe the best?
+
+% THREE COMMANDS TO CLEAN UP ALL THE ELEDPAR/ELEDMAC STUFF
+\newcommand{\StartOfLatin}{
+	\begin{pairs}
+	\begin{Leftside}
+	\firstlinenum{10000}\linenumincrement{10000}\beginnumbering\pstart
+}
+
+\newcommand{\StartOfEnglish}{
+	\pend\endnumbering
+	\end{Leftside}
+	\begin{Rightside}
+
+	\firstlinenum{10000}\linenumincrement{10000}\beginnumbering\pstart
+}
+
+\newcommand{\EndOfEnglish}{
+	\pend\endnumbering
+	\end{Rightside}
+	\end{pairs}
+	\Columns
+}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\cfoot{\textcolor{benblue1}{\thepage}}
+\renewcommand{\headrulewidth}{0pt}
+
+%redefine 'plain' page styel to have blue page numbers too
+\fancypagestyle{plain}{
+	\chead{}
+	\cfoot{\textcolor{benblue1}{\thepage}}
+
+}
+
+\begin{document}
+
+\chapter*{1 Maccabees}
+
+
+
+\end{document}
+
+
+
+
+
+
