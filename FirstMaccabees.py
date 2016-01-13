@@ -242,10 +242,10 @@ class Chapter(object):
     def insert_just_english_into_template(self, template):
         "insert the latin and english paragraphs into a latex template"
         for i in range(len(self.english_pars)):
-            template = re.sub('(\\\\chapter\*\{1 Maccabees\}\\n\\n)',
+            template = re.sub('(\\\\chapter\*\{\}\\n\\n)',
                               '\\1' + self.english_pars[-1-i] + '\n',
                               template)
-        template = re.sub('(\\\\chapter\*\{1 Maccabees\}\\n\\n)',
+        template = re.sub('(\\\\chapter\*\{\}\\n\\n)',
                           '\\1\\\\begin{large}\\\\begin{center}\\\\textsc{Chapter ' + number_to_roman(self.number) + '}\end{center}\end{large}\n',
                           template)
         return(template)
@@ -261,7 +261,8 @@ class Chapter(object):
 
         
 if __name__ == '__main__':    
-    Book('1ma001.htm')
+    #Book('1ma001.htm')
+    Book('1ch001.htm')
     
     template = read_in_latex_template('BookTemplate.tex')
     template_just_english = read_in_latex_template('BookTemplate_just_english.tex')
@@ -269,5 +270,8 @@ if __name__ == '__main__':
     output = template_just_english
     for i in range(len(BOOKS[0].chapters)):
         output = BOOKS[0].chapters[-1-i].insert_just_english_into_template(output)
-
+    
+    # add title of book
+    output = re.sub('chapter\*\{', 'chapter*{' + BOOKS[0].title, output)
+        
     write_latex_output_to_file(output, BOOKS[0].dirname)
