@@ -215,7 +215,11 @@ class Chapter(object):
             footnote_backslashes = ''
         ones = {u'\u2019': unicode_to_latex.unicode_to_latex[u'\u0027'],
                 u'\u2026': unicode_to_latex.unicode_to_latex[u'\u2026'].strip() + '\\\\ ',
-                u'\u2018': unicode_to_latex.unicode_to_latex[u'\u0060']
+                u'\u2018': unicode_to_latex.unicode_to_latex[u'\u0060'],
+                u'\u00a0': ' ',  # unicode equivalent of latex ~
+                u'\u00f6': unicode_to_latex.unicode_to_latex[u'\u00f6'],  # o with diaresis
+                u'\u2013': unicode_to_latex.unicode_to_latex[u'\u2013'],  # en-dash
+                u'\u2014': unicode_to_latex.unicode_to_latex[u'\u2014'],  # em-dash
         }
         for key, value in ones.items():
             paragraph = re.sub(key, footnote_backslashes + '\\\\\\' + value, paragraph)
@@ -262,7 +266,8 @@ class Chapter(object):
         
 if __name__ == '__main__':    
     #Book('1ma001.htm')
-    Book('1ch001.htm')
+    #Book('1ch001.htm')
+    Book('eze001.htm')
     
     template = read_in_latex_template('BookTemplate.tex')
     template_just_english = read_in_latex_template('BookTemplate_just_english.tex')
