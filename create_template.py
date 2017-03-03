@@ -261,8 +261,9 @@ class Chapter(object):
 
         
 if __name__ == '__main__':    
-    #Book('1ma001.htm')
-    Book('1ch001.htm')
+    # Book('1ma001.htm')
+    # Book('1ch001.htm')
+    Book('psa001.htm')
     
     template = read_in_latex_template('BookTemplate.tex')
     template_just_english = read_in_latex_template('BookTemplate_just_english.tex')
