@@ -1,6 +1,10 @@
 *.pdf
+*.end
 *.log
 *.aux
 *.synctex.gz
+*.1
+*.1R
 
 __pycache__/*
+__init__/
