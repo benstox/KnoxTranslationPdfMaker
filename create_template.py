@@ -71,7 +71,7 @@ def create_directory(dirname):
 def webpage_to_soup(url):
     "make a get request to a website, return a soup"
     r = requests.get(url)
-    soup = BeautifulSoup(r.content)
+    soup = BeautifulSoup(r.content, "lxml")
     return(soup)
 
 
