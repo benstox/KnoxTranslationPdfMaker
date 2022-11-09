@@ -126,6 +126,8 @@ class Book(object):
         "get title of this book"
         h1s = soup.find_all('h1')
         title = re.sub('^(.*) [0-9]+$', '\\1', h1s[0].text)
+        if title == "Psalm":
+            title = "Psalms"
         return(title)
 
     def title_to_dirname(self, title):
@@ -272,7 +274,7 @@ if __name__ == '__main__':
     # Book('1ma001.htm')
     # Book('1ch001.htm')
     # Book('eze001.htm')
-    Book('psa001.htm')
+    Book('son001.htm')
 
     template = read_in_latex_template('BookTemplate.tex')
     template_just_english = read_in_latex_template('BookTemplate_just_english.tex')
